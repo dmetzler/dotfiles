@@ -1,0 +1,118 @@
+[user]
+	name = Damien Metzler
+	email = "{{ .email }}"
+    signingKey = 29EB345EFCD71E8C
+
+[gpg]
+        program = gpg
+
+[commit]
+        gpgSign = true
+
+
+[alias]
+# Simple shortcuts
+	st = status -sb
+	ci = commit
+	cp = cherry-pick
+	co = checkout
+	br = branch
+	branches = branch -a
+	di = diff
+	dic = diff --staged
+	id = show -s --pretty=format:'%h%d'
+	rollback = git reset --soft HEAD^
+# Because "pull --rebase" and "rebase" are finally more used than "pull" and "merge"
+	pullr = pull --rebase
+
+# Using ref to upstream branch available since Git 1.7 (@{upstream})
+# Incoming changes
+	in = "!git remote update -p; git log ..@{u}"
+# Outgoing changes
+	out = log @{u}..
+# Outgoing changes on all remote-tracked branches
+	outall = log --branches --not --remotes=origin
+
+# Various log display
+	lg = log --pretty=format:'%C(auto)%m %h %Cgreen%ad %C(blue)%<(20)%aN %Creset%s %N %C(auto)%d %C(green bold)%G?' --left-right --cherry-pick --date=short
+	glog = log --graph --abbrev-commit --date=relative
+# Latests changes since last pull
+	lc = log --pretty=oneline --abbrev-commit --graph --decorate ORIG_HEAD.. --stat --no-merges
+# Latest updated branches
+	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+# Latest updated local branches
+	latestl = for-each-ref --sort=-committerdate refs/heads --format='%(committerdate:short) %(refname:short)'
+
+# Commits per user
+	who = shortlog -ne --format='%h %s'
+# LoC per user
+	authorship = !git ls-files -z|xargs -0 -n1 -E'\n' -J {} git blame --date short -wCMcp '{}'| perl -pe 's/^.*?\\((.*?) +\\d{4}-\\d{2}-\\d{2} +\\d+\\).*/\\1/'| sort | uniq -c | sort -rn
+
+
+[push]
+	default = current
+[core]
+	excludesfile = /Users/dmetzler/.gitignore
+	safecrlf = warn
+	autocrlf = input
+	ignorecase = true
+        pager = delta
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+#	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[url "https://"]
+	insteadOf = git://
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[credential]
+	helper = osxkeychain
+[filesystem "Oracle Corporation|1.8.0_162|/dev/disk1s5"]
+	timestampResolution = 1001 milliseconds
+	minRacyThreshold = 0 nanoseconds
+[hub]
+	protocol = ssh
+
+[delta]
+    features = unobtrusive-line-numbers decorations
+    syntax-theme = Dracula
+    plus-style = syntax "#003800"
+    minus-style = syntax "#3f0001"
+
+[delta "unobtrusive-line-numbers"]
+    line-numbers = true
+    line-numbers-minus-style = "#444444"
+    line-numbers-zero-style = "#444444"
+    line-numbers-plus-style = "#444444"
+    line-numbers-left-format = "{nm:>4}┊"
+    line-numbers-right-format = "{np:>4}│"
+    line-numbers-left-style = blue
+    line-numbers-right-style = blue
+
+[delta "side-by-side"]
+    line-numbers-left-format = ""
+    line-numbers-right-format = "│ "
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = cyan box ul
+
+[delta "line-numbers"]
+    line-numbers-left-style = cyan
+    line-numbers-right-style = cyan
+    line-numbers-minus-style = 124
+    line-numbers-plus-style = 28    
+
+[interactive]
+	diffFilter = delta --color-only
+[init]
+	defaultBranch = main
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
