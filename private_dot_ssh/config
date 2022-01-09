@@ -1,0 +1,11 @@
+Host titouan.github.com
+    Hostname github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_titouan
+    StrictHostKeyChecking=False
+
+Host pi.hole
+    Hostname pi.hole
+    User pi
+    StrictHostKeyChecking=False
+

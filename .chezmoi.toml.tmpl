@@ -1,5 +1,5 @@
 {{- $email := promptString "Email: " -}}
-{{- $location := promptString ":Location (work|home)" -}}
+{{- $location := promptString "Location: (work|home)" -}}
 [data]
     email = "{{ $email }}"
     location = "{{ $location }}"

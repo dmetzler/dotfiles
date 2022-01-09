@@ -1,6 +1,109 @@
-# Install these on work machines only
-{{- if eq .location "work" }}
-{{- end }}
+tap "aws/tap"
+tap "cjbassi/ytop"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "minio/stable"
+tap "mvndaemon/mvnd"
 
-{{- if eq .location "home" }}
-{{- end }}
+brew "act"
+brew "zsh"
+brew "arduino-cli"
+brew "argocd"
+brew "python@3.9"
+brew "awscli"
+brew "aws-sam-cli"
+brew "bandwhich"
+brew "bat"
+brew "glib"
+brew "guile"
+brew "p11-kit"
+brew "unbound", restart_service: true
+brew "gnutls"
+brew "nghttp2"
+brew "cask"
+brew "chezmoi"
+brew "cmake"
+brew "dive"
+brew "dnsmasq", restart_service: true
+brew "dust"
+brew "exa"
+brew "fd"
+brew "ffmpeg"
+brew "gh"
+brew "git-delta"
+brew "git-lfs"
+brew "gnupg"
+brew "go"
+brew "helm"
+brew "libheif"
+brew "imagemagick"
+brew "java"
+brew "java11"
+brew "jenv"
+brew "jq"
+brew "kustomize"
+brew "qemu"
+brew "lima"
+brew "mas"
+brew "maven"
+brew "mkcert"
+brew "nvm"
+brew "openssl"
+brew "pinentry-mac"
+brew "poetry"
+brew "procs"
+brew "pulumi"
+brew "pyenv"
+brew "python@3.8"
+brew "r"
+brew "ruby-build"
+brew "rbenv"
+brew "ripgrep"
+brew "rust"
+brew "shellcheck"
+brew "shfmt"
+brew "shunit2"
+brew "tig"
+brew "up"
+brew "watch"
+brew "wget"
+brew "yq"
+brew "aws/tap/aws-sam-cli"
+brew "aws/tap/ec2-instance-selector"
+brew "cjbassi/ytop/ytop"
+brew "mvndaemon/mvnd/mvnd"
+
+
+cask "aerial"
+cask "jumpcut"
+cask "iterm2"
+cask "maccy"
+cask "qlcolorcode"
+cask "qlstephen"
+cask "visual-studio-code"
+cask "eclipse-java"
+cask "sublime-text"
+cask "obsidian"
+cask "google-chrome"
+cask "firefox"
+cask "docker"
+cask "zoomus"
+cask "amazon-chime"
+cask "dropbox"
+cask "maccy"
+cask "spectacle"
+
+
+mas 'Messenger', id: 1480068668
+mas 'Things', id: 904280696
+mas '1Password 7', id: 1333542190
+mas 'Twitter', id: 1482454543
+mas 'LanguageTool', id: 1534275760
+mas 'WireGuard', id: 1451685025
+mas 'Be Focused', id: 973134470
+mas 'Xcode', id: 497799835
+mas 'WhatsApp', id: 1147396723
+mas 'Alfred', id: 405843582
+mas 'Slack', id: 803453959

@@ -84,7 +84,7 @@ plugins=(
   iterm2
   docker
   kubectl
-  poetry
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -119,12 +119,16 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 export EDITOR='subl -w'
-export MAVEN_OPTS="-Djava.awt.headless -Xmx2048m -Declipse.workspace=/Users/dmetzler/Documents/workspaces/cloud -DdownloadSources"
+# export MAVEN_OPTS="-Djava.awt.headless -Xmx2048m -Declipse.workspace=/Users/dmetzler/Documents/workspaces/cloud -DdownloadSources"
 
-
-source <(oc completion zsh)
+export MAVEN_OPTS="-Djava.awt.headless -Xmx2048m -DdownloadSources"
 
 alias pretty="python -m json.tool"
+alias cm=chezmoi
+
+alias ls=exa
+alias cat=bat
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -150,3 +154,4 @@ export PATH="$HOME/.amplify/bin:$PATH"
 
 # Use Brew OpenSSL instead of LibreSSL on MacOSX
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+
