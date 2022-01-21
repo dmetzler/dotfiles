@@ -1,2 +1,3 @@
 README.md
 **/*.zwc
+.oh-my-zsh/cache/**/*
