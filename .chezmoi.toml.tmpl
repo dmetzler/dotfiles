@@ -1,5 +1,7 @@
 {{- $email := promptString "Email: " -}}
-{{- $location := promptString "Location: (work|home)" -}}
+{{- $location := promptString "Location: (work|home) " -}}
+{{- $signingkey := promptString "GPG Signing key: " -}}
 [data]
     email = "{{ $email }}"
     location = "{{ $location }}"
+    signingkey = "{{ $signingkey }}"

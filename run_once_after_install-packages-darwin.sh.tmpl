@@ -4,5 +4,8 @@
 
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-#brew bundle --no-lock --file=$HOME/Brewfile.local
+brew bundle --no-lock --file=$HOME/Brewfile.local
+
+# Brew can return some bad results but we don't really care.
+exit 0
 {{ end -}}

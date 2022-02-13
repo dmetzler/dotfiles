@@ -3,19 +3,19 @@
     url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+    refreshPeriod = "10h"
 [".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
     type = "archive"
     url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+    refreshPeriod = "10h"
 [".oh-my-zsh/custom/plugins/abbrev-alias"]
     type = "archive"
     url = "https://github.com/momo-lab/zsh-abbrev-alias/archive/master.tar.gz"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+    refreshPeriod = "10h"
 [".oh-my-zsh/custom/themes/powerlevel10k"]
     type = "archive"
     url = "https://github.com/romkatv/powerlevel10k/archive/master.tar.gz"

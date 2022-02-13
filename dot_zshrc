@@ -91,8 +91,17 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -108,38 +117,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-export EDITOR='subl -w'
-# export MAVEN_OPTS="-Djava.awt.headless -Xmx2048m -Declipse.workspace=/Users/dmetzler/Documents/workspaces/cloud -DdownloadSources"
-
-export MAVEN_OPTS="-Djava.awt.headless -Xmx2048m -DdownloadSources"
-
-
-
-abbrev-alias is='isengard-cli'
-abbrev-alias cm='chezmoi'
-abbrev-alias d='docker'
-abbrev-alias k='kubectl'
-abbrev-alias -r dr='d run --rm -it'
-
-
-
-alias pretty="python -m json.tool"
-alias cm=chezmoi
-alias ls=exa
-alias cat=bat
-
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -148,17 +125,14 @@ alias cat=bat
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-# Node version manager
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Ruby RBEnv
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 eval "$(rbenv init -)"
 export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
-
-export GPG_TTY=$TTY
 
 # Added by Amplify CLI binary installer
 export PATH="$HOME/.amplify/bin:$PATH"

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+/usr/local/bin/op get document "GnuPG key for {{ .email }}"  | gpg --import

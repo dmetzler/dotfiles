@@ -1,14 +1,17 @@
 [user]
 	name = Damien Metzler
 	email = "{{ .email }}"
-    signingKey = F023AC2A6B6AE11F
+{{- if .signingkey }}
+    signingKey = {{ .signingkey }}
+{{- end }}
 
 [gpg]
         program = gpg
 
 [commit]
         gpgSign = true
-
+[ghq]
+root = ~/src
 
 [alias]
 # Simple shortcuts

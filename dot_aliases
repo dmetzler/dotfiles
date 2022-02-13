@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# One of @janmoesen’s ProTip™s
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+	abbrev-alias "${method}"="curl -X ${method}"
+done
+
+
+abbrev-alias is='isengard-cli'
+abbrev-alias cm='chezmoi'
+abbrev-alias d='docker'
+abbrev-alias k='kubectl'
+abbrev-alias -r dr='d run --rm -it'
+
+
+alias pretty="python -m json.tool"
+alias cm=chezmoi
+alias ls=exa
+alias cat=bat
