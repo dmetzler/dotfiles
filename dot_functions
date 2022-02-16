@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+function lolbanner {
+  figlet -c -f ~/.local/share/fonts/figlet-fonts/3d.flf $@ | lolcat
+}
