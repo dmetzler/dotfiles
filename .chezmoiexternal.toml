@@ -21,3 +21,9 @@
     url = "https://github.com/romkatv/powerlevel10k/archive/master.tar.gz"
     exact = true
     stripComponents = 1
+
+[".local/share/fonts/figlet-fonts/"]
+    type = "archive"
+    url = "https://github.com/xero/figlet-fonts/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
