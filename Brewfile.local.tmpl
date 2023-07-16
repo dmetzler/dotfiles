@@ -81,10 +81,13 @@ brew "yq"
 brew "aws/tap/aws-sam-cli"
 brew "aws-cdk"
 brew "aws/tap/ec2-instance-selector"
+brew "aws/tap/copilot-cli"
 brew "cjbassi/ytop/ytop"
 brew "mvndaemon/mvnd/mvnd"
 brew "curl-openssl"
 brew "quarkusio/tap/quarkus"
+brew "dependency-check"
+brew "ruby"
 
 # Apple TV Screensaver
 cask "aerial"
@@ -106,6 +109,9 @@ cask "spectacle"
 cask "qlcolorcode"
 cask "qlstephen"
 
+# Alfred replacement
+cask "raycast"
+
 # IDEs
 cask "visual-studio-code"
 cask "eclipse-java"
@@ -113,6 +119,7 @@ cask "sublime-text"
 
 # Note taking
 cask "obsidian"
+cask "mark-text"
 
 # Browsers (are already installed on work laptops)
 {{- if ne .location "work" }}
@@ -120,7 +127,9 @@ cask "google-chrome"
 cask "firefox"
 {{- end }}
 
-cask "docker"
+# cask "docker"
+
+cask "finch"
 
 # Communication
 cask "zoom"

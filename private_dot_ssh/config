@@ -9,6 +9,10 @@ Host pi.hole
     User pi
     StrictHostKeyChecking=False
 
+Host gitlab.com
+    Hostname gitlab.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_ed25519_gitlab
 
 Host ssh.gitlab.aws.dev
     User git
