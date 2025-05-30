@@ -15,5 +15,4 @@ abbrev-alias -r dr='d run --rm -it'
 
 alias pretty="python -m json.tool"
 alias cm=chezmoi
-alias ls=exa
 alias cat=bat
