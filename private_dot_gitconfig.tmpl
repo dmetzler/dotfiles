@@ -1,15 +1,22 @@
 [user]
 	name = Damien Metzler
-	email = "{{ .email }}"
-{{- if .signingkey }}
-    signingKey = {{ .signingkey }}
+{{- if ne .location "work" }}
+	email = "damien.metzler@hyland.com"
+{{ else }}
+  email = "dmetzler@gmail.com"
 {{- end }}
+	email = "{{ .email }}"
+  signingKey = {{ .signingkey }}
 
 [gpg]
-        program = gpg
+        format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [commit]
         gpgSign = true
+
 [ghq]
 root = ~/src
 

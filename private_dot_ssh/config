@@ -3,23 +3,3 @@ Host titouan.github.com
     User git
     IdentityFile ~/.ssh/id_rsa_titouan
     StrictHostKeyChecking=False
-
-Host pi.hole
-    Hostname pi.hole
-    User pi
-    StrictHostKeyChecking=False
-
-Host gitlab.com
-    Hostname gitlab.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_ed25519_gitlab
-
-Host ssh.gitlab.aws.dev
-    User git
-    IdentityFile ~/.ssh/id_rsa
-    CertificateFile ~/.ssh/id_rsa-cert.pub
-    IdentitiesOnly yes
-    # Uncomment the next two lines if you have a complex SSH config setup with catch-alls to use bastions/jump hosts.
-    # ProxyCommand none
-    # ProxyJump none
-
