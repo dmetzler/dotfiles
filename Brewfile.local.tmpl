@@ -81,6 +81,7 @@ brew "dependency-check"
 brew "ruby"
 brew "mise"
 brew "uv"
+brew "ollama"
 
 # Apple TV Screensaver
 cask "aerial"
@@ -129,16 +130,15 @@ cask "firefox"
 
 cask "docker"
 
-cask "finch"
-
 # Communication
 cask "zoom"
 cask "webex-meetings"
+cask "amazon-chime"
 
 # Cloud
 {{- if ne .location "work" }}
 cask "dropbox"
-cask "amazon-chime"
+
 {{- end }}
 
 
@@ -146,9 +146,8 @@ cask "amazon-chime"
 {{- if ne .location "work" }}
 mas 'Messenger', id: 1480068668
 mas 'WhatsApp', id: 1147396723
-mas 'Things', id: 904280696
 {{- end }}
-
+mas 'Things', id: 904280696
 
 mas  'Hidden Bar', id: 1452453066
 mas 'Slack', id: 803453959
