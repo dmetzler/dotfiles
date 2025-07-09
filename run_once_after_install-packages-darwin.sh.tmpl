@@ -6,6 +6,21 @@
 
 brew bundle --no-lock --file=$HOME/Brewfile.local
 
+# Add java with jenv
+jenv add /Library/Java/JavaVirtualMachines/zulu-24.jdk/Contents/Home/
+jenv add /Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home/
+jenv add /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home/
+jenv global 17
+
+# Add Node with nvm
+nvm install stable
+
+
 # Brew can return some bad results but we don't really care.
 exit 0
+
+
+
+
+
 {{ end -}}
