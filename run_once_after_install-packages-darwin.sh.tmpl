@@ -14,7 +14,9 @@ jenv global 17
 
 # Add Node with nvm
 nvm install stable
+npm install -g yarn
 
+yarn config set --home enableTelemetry 0
 
 # Brew can return some bad results but we don't really care.
 exit 0
