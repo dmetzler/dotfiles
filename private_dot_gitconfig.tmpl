@@ -1,10 +1,5 @@
 [user]
 	name = Damien Metzler
-{{- if ne .location "work" }}
-	email = "damien.metzler@hyland.com"
-{{ else }}
-  email = "dmetzler@gmail.com"
-{{- end }}
 	email = "{{ .email }}"
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDyB5pTLaT4SVP/+y70UhwXN1uDYUSVdrX80PT/D3AVW
 [gpg]
@@ -69,7 +64,7 @@ root = ~/src
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 #	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [url "https://"]
 	insteadOf = git://
 
@@ -116,7 +111,7 @@ root = ~/src
     line-numbers-left-style = cyan
     line-numbers-right-style = cyan
     line-numbers-minus-style = 124
-    line-numbers-plus-style = 28    
+    line-numbers-plus-style = 28
 
 [interactive]
 	diffFilter = delta --color-only

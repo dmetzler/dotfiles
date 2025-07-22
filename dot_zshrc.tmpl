@@ -9,7 +9,12 @@ fi
 export PATH="$HOME/bin:/opt/homebrew/bin/:/usr/local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
+{{- if ne .location "work" }}
+export ZSH="/Users/damien.metzler/.oh-my-zsh"
+{{ else }}
 export ZSH="/Users/dmetzler/.oh-my-zsh"
+{{- end }}
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
