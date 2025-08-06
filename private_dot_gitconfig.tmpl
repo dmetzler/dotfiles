@@ -3,13 +3,14 @@
 	email = "{{ .email }}"
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDyB5pTLaT4SVP/+y70UhwXN1uDYUSVdrX80PT/D3AVW
 [gpg]
-        format = ssh
+    format = ssh
 
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  allowedSignersFile = "{{ .chezmoi.homeDir }}/.config/git/allowed_signers"
 
 [commit]
-        gpgSign = true
+    gpgSign = true
 
 [ghq]
 root = ~/src
