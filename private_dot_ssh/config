@@ -5,3 +5,8 @@ Host titouan.github.com
     User git
     IdentityFile ~/.ssh/id_rsa_titouan
     StrictHostKeyChecking=False
+
+Host jarvis
+    HostName 192.168.1.242
+    User dmetzler
+    IdentityFile ~/.ssh/id_rsa
