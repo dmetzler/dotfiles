@@ -13,8 +13,8 @@ command = "code"
 args = ["--wait", "--diff"]
 
 [merge]
-command = "bash"
-args = [
-    "-c",
-    "cp {{ .Target }} {{ .Target }}.base && code --new-window --wait --merge {{ .Destination }} {{ .Target }} {{ .Target }}.base {{ .Source }}",
-]
+    command = "bash"
+    args = [
+        "-c",
+        "cp {{ `{{ .Target | quote }}` }} {{ `{{ printf \"%s.base\" .Target | quote }}` }} && code --new-window --wait --merge {{ `{{ .Destination | quote }}` }} {{ `{{ .Target | quote }}` }} {{ `{{ printf \"%s.base\" .Target | quote }}` }} {{ `{{ .Source | quote }}` }}",
+    ]
